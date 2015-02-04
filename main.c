@@ -22,6 +22,9 @@ int main(int argc, char** argv) {
     
     printf("Inserisci %d valori interi POSITIVI\n", SIZE);
     // inserisci il codice necessario all'inserimento dei valori nell'array v
+    for(i=0; i<SIZE; i++)
+        scanf("%d", &v[i]);
+        
     
     mas = massimo(v, SIZE);
     med = media(v, SIZE);
@@ -46,16 +49,23 @@ int main(int argc, char** argv) {
  * Calcola il valore massimo presente nell'array di valori interi POSITIVI, di dimensione n.
  */
 int massimo(int valori[], int n) {
-    // TODO Implementa il codice della funzione
-    return -1;
+    int i, max = 0;
+    for(i=0; i<n; i++)
+        if(valori[i] > max)
+            max = valori[i];
+    return max;    
 }
 
 /*
  * Calcola la media dei valori interi POSITIVI nell'array, di dimensione n.
  */
 float media(int valori[], int n) {
-    // TODO Implementa il codice della funzione
-    return -1;
+    int i;
+    float med = 0;
+    for(i=0; i<n; i++)
+        med = med + valori[i];
+    med = med / (float)n;
+    return med;
 }
 
 /*
@@ -63,8 +73,9 @@ float media(int valori[], int n) {
  * Ad esempio: 10 / 4 => 2.5
  */
 float divisione(int dividendo, int divisore) {
-    // TODO Implementa il codice della funzione
-    return -1;
+    float ris=0;
+    ris = (float)dividendo/(float)divisore;
+    return ris;
 }
 
 /*
@@ -72,8 +83,9 @@ float divisione(int dividendo, int divisore) {
  * Ad esempio: 10 / 4 => 2
  */
 int quoziente(int dividendo, int divisore) {
-    // TODO Implementa il codice della funzione
-    return -1;
+    int ris=0;
+    ris = dividendo/divisore;
+    return ris;
 }
 
 /*
@@ -81,8 +93,9 @@ int quoziente(int dividendo, int divisore) {
  * Ad esempio: 10 / 4 => 2
  */
 int restoDivisione(int dividendo, int divisore) {
-    // TODO Implementa il codice della funzione
-    return -1;
+    int res=0;
+    res = dividendo%divisore;
+    return res;
 }
 
 /*
@@ -91,7 +104,8 @@ int restoDivisione(int dividendo, int divisore) {
  * La parte decimale è, ovviamente, sempre inferiore a 1.
  */
 float parteDecimaleDivisione(int dividendo, int divisore) {
-    // TODO Implementa il codice della funzione
-    return -1;
+    float  pDD=0;
+    pDD = dividendo%divisore;
+    pDD/=divisore;
+    return pDD;
 }
-
